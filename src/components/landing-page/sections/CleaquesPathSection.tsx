@@ -15,7 +15,7 @@ const CleaquesPath = () => {
             The Cleaques Path
           </h1>
           <p className="text-sm md:text-base mt-1 max-w-[462px] md:ml-auto">
-            We’re here to make travel for the diaspora simple, soulful, and seamless — in a few steps.
+            We’re here to make travel for the diaspora simple, soulful, and seamless in few sets
           </p>
         </div>
       </div>
@@ -25,7 +25,7 @@ const CleaquesPath = () => {
           <h1 className="text-[40px] md:text-[48px] text-[#FDF3E2]" >0<span className='text-[#2c8af6]'>1</span></h1>
           <p className="text-[22px] md:text-[24px] font-medium">Set Your Preference</p>
           <p className="text-[16px] max-w-[300px] mt-4">
-            Tell us what home feels like — from ocean breeze to city lights.
+            Tell us what home feels like, from ocean breeze to city lights. We’ll use your choices to shape your perfect experience.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ const CleaquesPath = () => {
            <h1 className="text-[40px] md:text-[48px] text-[#FDF3E2]" >0<span className='text-[#2c8af6]'>2</span></h1>
           <p className="text-[22px] md:text-[24px] font-medium">Explore & Discover</p>
           <p className="text-[16px] max-w-[300px] mt-4 md:ml-auto">
-            Find destinations that carry the rhythm, colour, and soul of the continent and the islands.
+            Discover places, book everything you need, and create your itinerary in one spot. Flights, stays, rides, activities… all sorted.
           </p>
         </div>
       </div>
@@ -67,7 +67,7 @@ const CleaquesPath = () => {
            <h1 className="text-[40px] md:text-[48px] text-[#FDF3E2]" >0<span className='text-[#2c8af6]'>3</span></h1>
           <p className="text-[22px] md:text-[24px] font-medium">Customize Your Journey</p>
           <p className="text-[16px] max-w-[300px] mt-4">
-            Create an itinerary that blends heritage with adventure — flights, stays, rides, and experiences all in one flow.
+            Your payment is held safely until your experience is completed. Vendors get paid after service, and refunds are issued when needed.
           </p>
         </div>
 
