@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import React from "react";
 // import pfp from "@/assets/img/pfp.png";
-import { MAIN_CLIENT_ROUTE } from "@/app/(main)/constants";
+import { MAIN_CLIENT_ROUTE } from "@/app/constants";
 import { useAuth } from "@/hooks/use-auth";
 import { StatusAlertModal } from "@/shared/dialog/app-status-alert-modal";
 
