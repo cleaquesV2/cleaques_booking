@@ -1,42 +1,40 @@
-"use client";
-
 import React from "react";
-import { Check, X } from "lucide-react";
 
-interface PasswordRequirement {
+interface Requirement {
   label: string;
   isValid: boolean;
 }
 
 interface PasswordValidationProps {
-  requirements: PasswordRequirement[];
+  requirements: Requirement[];
 }
 
-export default function PasswordValidation({ requirements }: PasswordValidationProps) {
+export const validatePasswordRequirements = (password: string) => ({
+  hasUppercase: /[A-Z]/.test(password),
+  hasNumber: /\d/.test(password),
+  hasSpecialChar: /[^A-Za-z0-9]/.test(password),
+});
+
+const PasswordValidation: React.FC<PasswordValidationProps> = ({ requirements }) => {
+  if (!requirements?.length) return null;
+
   return (
-    <div className="flex flex-wrap gap-4 mt-2">
-      {requirements.map((req, index) => (
-        <div key={index} className="flex items-center gap-2">
-          {req.isValid ? (
-            <Check className="w-4 h-4 text-green-500" strokeWidth={3} />
-          ) : (
-            <X className="w-4 h-4 text-red-500" strokeWidth={3} />
-          )}
-          <span className={`text-sm ${req.isValid ? "text-green-500" : "text-white"}`}>
-            {req.label}
+    <div className="mt-2 flex items-center gap-2 rounded-lg text-sm">
+      {requirements.map((requirement) => (
+        <div key={requirement.label} className="flex items-center gap-2">
+          <span
+            className={`w-3 h-3 rounded-full border ${
+              requirement.isValid ? "bg-green-500 border-green-500" : "border-gray-500"
+            }`}
+          />
+          <span className={requirement.isValid ? "text-green-400" : "text-gray-400"}>
+            {requirement.label}
           </span>
         </div>
       ))}
     </div>
   );
-}
+};
 
-// Helper function to validate password requirements
-export function validatePasswordRequirements(password: string) {
-  return {
-    hasUppercase: /[A-Z]/.test(password),
-    hasNumber: /\d/.test(password),
-    hasSpecialChar: /[!@#$%^&*(),.?":{}|<>]/.test(password),
-  };
-}
-
+export default PasswordValidation;
+ 

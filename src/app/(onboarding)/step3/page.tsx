@@ -137,7 +137,7 @@ export default function OnboardingPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 right-0 mt-2 bg-[#0f1419] border border-gray-600 rounded shadow-lg z-10 max-h-[300px] overflow-hidden flex flex-col"
+                    className="absolute top-full left-0 right-0 mt-2 bg-[#0B1309] border border-gray-600 rounded shadow-lg z-10 max-h-[300px] overflow-hidden flex flex-col"
                   >
                     <input
                       type="text"
@@ -186,7 +186,7 @@ export default function OnboardingPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 right-0 mt-2 bg-[#0f1419] border border-gray-600 rounded shadow-lg z-10"
+                    className="absolute top-full left-0 right-0 mt-2 bg-[#0B1309] border border-gray-600 rounded shadow-lg z-10"
                   >
                     {travelTimeOptions.map((option) => (
                       <button

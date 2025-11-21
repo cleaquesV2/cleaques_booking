@@ -34,7 +34,7 @@ const Offerings = () => {
   return (
     <div className="bg-[#0B1309] text-[#fdf3e2] px-[30px] sm:px-6 md:px-8 lg:px-12 xl:px-20 py-20">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-6">
-        <div className="flex md:hidden w-full h-[2px] bg-[#FDF3E2] mb-2"></div>
+        <div className="flex md:hidden w-full h-[2px] bg-gray-500 mb-2"></div>
         <div className="mx-auto md:mx-0">
           <h1 className="text-center md:text-left text-[32px] font-[600] text-[#f7c31f]">
             Our Offerings
@@ -44,8 +44,8 @@ const Offerings = () => {
           </p>
         </div>
 
-        <div className="hidden md:flex flex-1 items-center justify-end">
-          <div className="w-full max-w-[780px] h-[0.5px] bg-[#FDF3E2]"></div>
+        <div className="hidden md:flex flex-1 items-center justify-between">
+          <div className="w-full h-[0.5px] bg-gray-500"></div>
         </div>
       </div>
 
@@ -54,16 +54,20 @@ const Offerings = () => {
           <div key={index} className="relative flex flex-col items-center text-center md:items-start md:text-left px-4">
             {index !== 0 && (
               <motion.div
-                className="block md:hidden absolute left-0 right-0 -top-6 h-[2px] bg-gradient-to-r from-transparent via-[#f7c31f] to-transparent"
+                className="block md:hidden absolute left-0 right-0 -top-6 h-[2px]"
                 style={{
-                  background: 'linear-gradient(90deg, transparent 0%, #f7c31f 50%, transparent 100%)',
+                  backgroundImage:
+                    "linear-gradient(90deg, transparent 0%, #f7c31f 50%, transparent 100%)",
+                  backgroundSize: "200% 100%",
+                  backgroundRepeat: "no-repeat",
                 }}
                 animate={{
-                  backgroundPosition: ['-100% 0', '200% 0', '-100% 0'],
+                  backgroundPositionX: ["0%", "100%", "0%"],
                 }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
+                  repeatType: "mirror",
                   ease: "easeInOut",
                 }}
               />
@@ -73,16 +77,17 @@ const Offerings = () => {
                 className="hidden md:block absolute -left-6 top-0 bottom-0 w-[2px] rounded-full overflow-hidden"
                 style={{
                   backgroundImage:
-                    "linear-gradient(180deg, transparent 0%, transparent 25%, #f7c31f 25%, #f7c31f 75%, transparent 75%, transparent 100%)",
+                    "linear-gradient(180deg, transparent 0%, #f7c31f 40%, transparent 60%, transparent 100%)",
                   backgroundSize: "100% 200%",
+                  backgroundRepeat: "no-repeat",
                 }}
                 animate={{
-                  backgroundPosition: ["0% 0%", "0% 100%", "0% 0%"],
+                  backgroundPositionY: ["0%", "100%", "0%"],
                 }}
                 transition={{
-                  duration: 5,
+                  duration: 4,
                   repeat: Infinity,
-                  repeatDelay: 0.5,
+                  repeatType: "mirror",
                   ease: "easeInOut",
                 }}
               />

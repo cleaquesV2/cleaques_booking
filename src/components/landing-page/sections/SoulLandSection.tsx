@@ -6,9 +6,9 @@ const SoulLand = () => {
     <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-16 md:py-20">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="md:flex flex-1 items-center">
-           <div className="md:flex hidden w-full max-w-[700px] h-[0.5px] bg-[#FDF3E2] mb-6"></div>
+           <div className="md:flex hidden w-full h-[0.5px] bg-gray-500 mb-6"></div>
         </div>
-         <div className="flex md:hidden w-full h-[0.5px] bg-[#FDF3E2] mb-6"></div>
+         <div className="flex md:hidden w-full h-[0.5px] bg-gray-500 mb-6"></div>
 
         <div className="mx-auto md:mx-0">
           <h1 className="text-center md:text-left text-2xl sm:text-3xl lg:text-[32px] font-semibold text-[#f7c31f] leading-[123%]">
@@ -104,9 +104,9 @@ const SoulLand = () => {
         </div>
 
        <div className="md:flex flex-1 justify-end">
-           <div className="md:flex hidden w-full max-w-[700px] h-[0.5px] bg-[#FDF3E2]"></div>
+           <div className="md:flex hidden w-full h-[0.5px] bg-gray-500"></div>
         </div>
-         <div className="flex md:hidden w-full h-[0.5px] bg-[#FDF3E2] mb-6"></div>
+         <div className="flex md:hidden w-full h-[0.5px] bg-gray-500 mb-6"></div>
 
       </div>
     </div>

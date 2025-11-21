@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
     name: "Amara O.",
     location: "London",
     text:
-      "As a Caribbean traveler exploring Africa for the first time, I was nervous. But the platform made everything so easy, the guides were local, the rides felt safe, and the recommendations were spot-on.",
+      "First time exploring Africa from the Caribbean, and everything felt easy—local guides, safe rides, and spot-on tips.",
     image: "/assets/png/ProfileOne.png",
     borderColor: "border-yellow-400", 
     highlight: "I explored, I learned, I belonged.",
@@ -320,7 +320,7 @@ export default function TravelersTestimonials() {
               {active.highlight}
             </h3>
           )}
-          <p className="text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed mb-4 md:mb-6 max-w-[300px] lg:max-w-[400px] mx-auto text-center">
+          <p className="text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed mb-4 md:mb-6 max-w-[300px] lg:max-w-[400px] mx-auto text-center min-h-[120px] lg:min-h-0">
             {active?.text}
           </p>
           <p className="text-base md:text-lg lg:text-xl font-semibold text-white hidden lg:block">

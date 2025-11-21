@@ -136,7 +136,7 @@ const Navbar: React.FC = () => {
                       <button
                         key={currency.code}
                         onClick={() => handleCurrencySelect(currency)}
-                        className="w-full px-4 py-2 text-sm text-left hover:bg-gray-100 transition-colors flex items-center space-x-2"
+                        className="w-full cursor-pointer px-4 py-2 text-sm text-left hover:bg-gray-100 transition-colors flex items-center space-x-2"
                       >
                         <Image
                           src={currencyFlagIcons[currency.code]}
@@ -157,18 +157,18 @@ const Navbar: React.FC = () => {
 
             <Link
               href={MAIN_CLIENT_ROUTE.MY_TICKET_PURCHASES}
-              className="text-white hover:opacity-80 transition-opacity text-sm font-medium"
+              className="text-white hover:opacity-80 transition-opacity text-sm font-medium cursor-pointer"
             >
               My Trips
             </Link>
 
             <Link href={AUTH_CLIENT_ROUTE.LOGIN}>
-              <button className="border border-white text-white hover:bg-white/10 transition-colors px-4 py-2 rounded-full text-sm font-medium">
+              <button className="border border-white text-white hover:bg-white/10 transition-colors px-4 py-2 rounded-full text-sm font-medium cursor-pointer">
                 Sign In
               </button>
             </Link>
 
-            <button className="bg-[#00AEEF] hover:bg-[#0099D6] active:bg-[#0088C0] text-white py-2 px-6 rounded-full text-sm font-medium">
+            <button className="bg-[#00AEEF] hover:bg-[#0099D6] cursor-pointer active:bg-[#0088C0] text-white py-2 px-6 rounded-full text-sm font-medium">
               Plan Your Trip
             </button>
           </div>
@@ -176,7 +176,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Actions */}
           <div className="md:hidden flex items-center gap-3">
             <Link href={AUTH_CLIENT_ROUTE.LOGIN}>
-              <button className="border border-white/70 text-white text-xs font-medium px-3 py-1.5 rounded-full hover:bg-white/10 transition-colors">
+              <button className="border border-white/70 text-white text-xs font-medium px-3 py-1.5 rounded-full hover:bg-white/10 transition-colors cursor-pointer">
                 Sign In
               </button>
             </Link>
@@ -265,7 +265,7 @@ const Navbar: React.FC = () => {
                 </Link>
 
                 <Link href={AUTH_CLIENT_ROUTE.LOGIN} onClick={toggleMenu}>
-                  <button className="w-full border border-white text-white hover:bg-white/10 px-4 py-2 rounded-md text-sm">
+                  <button className="w-full border border-white text-white hover:bg-white/10 px-4 py-2 rounded-md text-sm cursor-pointer">
                     Sign In
                   </button>
                 </Link>

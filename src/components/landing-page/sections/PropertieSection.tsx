@@ -105,7 +105,7 @@ const TopProperties = () => {
         </div>
 
         <div className="hidden md:flex flex-1 justify-end">
-          <div className="w-full max-w-[700px] border border-[#fdf3e2]/40"></div>
+          <div className="w-full h-[0.5px] bg-gray-500"></div>
         </div>
       </div>
 

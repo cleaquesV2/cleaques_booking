@@ -5,7 +5,7 @@ const Destinations = () => {
   return (
     <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-10 md:py-20 min-h-[800px]">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-6">
-        <div className="flex md:hidden w-full h-[0.5px] bg-[#FDF3E2] mb-6"></div>
+        <div className="flex md:hidden w-full h-[0.5px] bg-gray-500 mb-6"></div>
         <div className="mx-auto md:mx-0">
           <h1 className="text-center md:text-left text-[28px] md:text-[32px] font-[600] text-[#f7c31f]">
             Top Destinations
@@ -16,7 +16,7 @@ const Destinations = () => {
           </p>
         </div>
         <div className="flex-1 hidden md:flex items-center justify-end">
-          <div className="w-full max-w-[779px] h-[0.5px] bg-[#FDF3E2]"></div>
+          <div className="w-full h-[0.5px] bg-gray-500"></div>
         </div>
       </div>
 
@@ -68,7 +68,7 @@ const Destinations = () => {
         </div>
       </div>
 
-      <div className="flex justify-end mt-8 gap-4">
+      <div className="flex justify-center lg:justify-end mt-8 gap-4">
         <Image
           src="/assets/svgs/ArrowLeft.svg"
           alt="Previous"
