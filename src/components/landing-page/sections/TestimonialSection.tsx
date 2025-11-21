@@ -88,29 +88,6 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const DashedLine = ({
-  fromX,
-  fromY,
-  toX,
-  toY,
-}: {
-  fromX: number;
-  fromY: number;
-  toX: number;
-  toY: number;
-}) => (
-  <line
-    x1={fromX}
-    y1={fromY}
-    x2={toX}
-    y2={toY}
-    stroke="#60A5FA" 
-    strokeWidth="2"
-    strokeDasharray="8 4"
-    className="pointer-events-none"
-    opacity="0.8"
-  />
-);
 
 export default function TravelersTestimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -140,7 +117,7 @@ export default function TravelersTestimonials() {
         </p>
       </div>
       <div className="hidden lg:block">
-        <div className="absolute left-[50px] lg:left-[80px] 2xl:left-[200px] transform translate-y-[40px] z-10 pointer-events-none">
+        <div className="absolute left-[50px] lg:left-20 2xl:left-[200px] transform translate-y-10 z-10 pointer-events-none">
           <Image
             src="/assets/svgs/TopLeftLine.svg"
             alt={testimonials[4].name}
@@ -167,7 +144,7 @@ export default function TravelersTestimonials() {
             className="w-[300px] md:w-[500px] lg:w-[500px] 2xl:w-[710px]"
           />
         </div>
-        <div className="absolute right-[50px] lg:right-[65px] 2xl:right-[200px] transform translate-y-[40px] z-10 pointer-events-none">
+        <div className="absolute right-[50px] lg:right-[65px] 2xl:right-[200px] transform translate-y-10 z-10 pointer-events-none">
           <Image
             src="/assets/svgs/TopRightLine.svg"
             alt={testimonials[4].name}
@@ -215,7 +192,7 @@ export default function TravelersTestimonials() {
           </button>
           <button
             onClick={() => setActiveIndex(1)}
-            className={`absolute z-30 left-[20px] 2xl:left-[100px] top-[150px] 2xl:top-[165px] w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 transition-all duration-300 cursor-pointer ${
+            className={`absolute z-30 left-5 2xl:left-[100px] top-[150px] 2xl:top-[165px] w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-4 transition-all duration-300 cursor-pointer ${
               activeIndex === 1
                 ? "border-yellow-400 scale-125 shadow-lg shadow-yellow-400/50 ring-4 ring-yellow-400/30"
                 : "border-gray-600 hover:border-gray-400"
@@ -231,7 +208,7 @@ export default function TravelersTestimonials() {
 
           <button
             onClick={() => setActiveIndex(2)}
-            className={`absolute z-30 w-20 h-20 left-[160px] 2xl:left-[240px] top-[285px] md:w-24 md:h-24 rounded-full overflow-hidden border-4 transition-all duration-300 cursor-pointer ${
+            className={`absolute z-30 w-20 h-20 left-40 2xl:left-60 top-[285px] md:w-24 md:h-24 rounded-full overflow-hidden border-4 transition-all duration-300 cursor-pointer ${
               activeIndex === 2
                 ? "border-yellow-400 scale-125 shadow-lg shadow-yellow-400/50 ring-4 ring-yellow-400/30"
                 : "border-gray-600 hover:border-gray-400"
@@ -279,7 +256,7 @@ export default function TravelersTestimonials() {
 
           <button
             onClick={() => setActiveIndex(5)}
-            className={`absolute z-30 w-20 h-20 right-[20px] 2xl:right-[100px] top-[150px] 2xl:top-[165px] md:w-24 md:h-24 rounded-full overflow-hidden border-4 transition-all duration-300 cursor-pointer ${
+            className={`absolute z-30 w-20 h-20 right-5 2xl:right-[100px] top-[150px] 2xl:top-[165px] md:w-24 md:h-24 rounded-full overflow-hidden border-4 transition-all duration-300 cursor-pointer ${
               activeIndex === 5
                 ? "border-yellow-400 scale-125 shadow-lg shadow-yellow-400/50 ring-4 ring-yellow-400/30"
                 : "border-gray-600 hover:border-gray-400"
@@ -295,7 +272,7 @@ export default function TravelersTestimonials() {
 
           <button
             onClick={() => setActiveIndex(6)}
-            className={`absolute z-30 w-20 h-20 right-[160px] 2xl:right-[250px] top-[285px] md:w-24 md:h-24 rounded-full overflow-hidden border-4 transition-all duration-300 cursor-pointer ${
+            className={`absolute z-30 w-20 h-20 right-40 2xl:right-[250px] top-[285px] md:w-24 md:h-24 rounded-full overflow-hidden border-4 transition-all duration-300 cursor-pointer ${
               activeIndex === 6
                 ? "border-yellow-400 scale-125 shadow-lg shadow-yellow-400/50 ring-4 ring-yellow-400/30"
                 : "border-gray-600 hover:border-gray-400"

@@ -105,7 +105,7 @@ export default function OnboardingPage() {
             className="text-center mb-12"
           >
             <h1 className="text-[32px] font-[400] text-[#F7C31F] mb-2">
-              Let's personalize your travel experience
+              Let&apos;s personalize your travel experience
             </h1>
             <p className="text-[#FDF3E2] text-[16px]">
               Kindly answer a few questions so we can plan your next trip
@@ -270,7 +270,7 @@ export default function OnboardingPage() {
           className="flex-1 flex flex-col px-5 py-5"
         >
           <h1 className="text-xl font-light text-[#f4c430] mb-2 text-center">
-            Let's personalize your travel experience
+            Let&apos;s personalize your travel experience
           </h1>
           <p className="text-gray-400 text-xs text-center mb-6">
             Kindly answer a few questions so we can plan your next trip

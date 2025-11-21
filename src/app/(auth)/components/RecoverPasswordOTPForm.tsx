@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import AuthButton from "./AuthButton";
-import Checkbox from "./Checkbox";
 
 interface RecoverPasswordOTPFormProps {
   onSubmit?: (data: { otp: string; trustDevice: boolean }) => void;
@@ -135,7 +134,7 @@ export default function RecoverPasswordOTPForm({
 
       <div className="text-center">
         <p className="text-gray-400 text-sm">
-          Didn't get a code?{" "}
+          Didn&apos;t get a code?{" "}
           {currentCountdown > 0 ? (
             <span className="text-gray-500">
               Resending in 0:{currentCountdown.toString().padStart(2, "0")}

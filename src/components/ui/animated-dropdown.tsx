@@ -2,13 +2,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import React from "react";
 // import pfp from "@/assets/img/pfp.png";
-import { MAIN_CLIENT_ROUTE } from "@/app/(main)/constants";
-import { useAuth } from "@/hooks/use-auth";
-import { StatusAlertModal } from "@/shared/dialog/app-status-alert-modal";
+// import { MAIN_CLIENT_ROUTE } from "@/app/constants";
+// import { useAuth } from "@/hooks/use-auth";
+// import { StatusAlertModal } from "@/shared/dialog/app-status-alert-modal";
 
 // const user = {
 //   name: "Jane Doe",
@@ -22,10 +21,8 @@ interface UserProps {
 }
 
 export const AnimatedDropdown = ({ firstName, lastName, avatar }: UserProps) => {
-  const router = useRouter();
   const [open, setOpen] = React.useState(false);
-  const [logOpen, setLogOpen] = React.useState(false);
-  const { logOut, } = useAuth();
+  // const { logOut, } = useAuth();
 
   return (
     <>
@@ -57,11 +54,11 @@ export const AnimatedDropdown = ({ firstName, lastName, avatar }: UserProps) => 
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="bg-[#1A1A1A] text-white rounded shadow-lg p-2 min-w-[160px] z-50"
+                className="bg-[#1A1A1A] text-white rounded shadow-lg p-2 min-w-40 z-50"
               >
                 <DropdownMenu.Item
                   className="px-3 py-2 text-sm hover:bg-[#2A2A2A] rounded cursor-pointer"
-                  onSelect={() => router.push(MAIN_CLIENT_ROUTE.MY_PROFILE)}
+                  // onSelect={() => router.push(MAIN_CLIENT_ROUTE.MY_PROFILE)}
                 >
                   View Profile
                 </DropdownMenu.Item>
@@ -71,7 +68,7 @@ export const AnimatedDropdown = ({ firstName, lastName, avatar }: UserProps) => 
                   onSelect={() => {
                     //todo: replace with real logout
                     console.log("Logging out...");
-                    setLogOpen(true);
+                    // setLogOpen(true);
                   }}
                 >
                   Logout
@@ -83,7 +80,7 @@ export const AnimatedDropdown = ({ firstName, lastName, avatar }: UserProps) => 
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
     {/* Logout confirmation modal */}
-    <StatusAlertModal
+    {/* <StatusAlertModal
         open={logOpen}
         onClose={() => setLogOpen(false)}
         actionText="Logout"
@@ -104,7 +101,7 @@ export const AnimatedDropdown = ({ firstName, lastName, avatar }: UserProps) => 
         }}
         content="Are you sure you want to log out?"
         title="Logout"
-    />
+    /> */}
     </>
   );
 };

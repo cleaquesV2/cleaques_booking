@@ -1,13 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 import AuthLayout from "../components/AuthLayout";
 import SignInForm, { SignInFormData } from "../components/SignInForm";
-import Checkbox from "../components/Checkbox";
 
 export default function SignInPage() {
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
@@ -16,7 +13,6 @@ export default function SignInPage() {
     try {
       console.log("Sign in data:", { ...data, rememberMe });
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      // router.push("/dashboard");
     } catch (error) {
       console.error("Sign in error:", error);
     } finally {

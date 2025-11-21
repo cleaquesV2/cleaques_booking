@@ -15,9 +15,6 @@ type Property = {
   category: string;
 };
 
-const TopProperties = () => {
-  const { formatAmount } = useCurrency();
-
   const properties: Property[] = [
     {
       id: 1,
@@ -50,6 +47,10 @@ const TopProperties = () => {
       category: "Beach homes",
     },
   ];
+
+
+const TopProperties = () => {
+  const { formatAmount } = useCurrency();
 
   const categories = [
     "Beach homes",
@@ -95,7 +96,7 @@ const TopProperties = () => {
     <section className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-20">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-left text-[28px] sm:text-[32px] font-[600] text-[#f7c31f]">
+          <h1 className="text-left text-[28px] sm:text-[32px] font-semibold text-[#f7c31f]">
             Stay at Our Top Properties
           </h1>
           <p className="text-sm md:text-base text-[#fdf3e2]/90 mt-1 max-w-[462px]">
