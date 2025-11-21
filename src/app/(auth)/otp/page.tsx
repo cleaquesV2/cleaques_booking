@@ -14,7 +14,7 @@ export default function OTPPage() {
     try {
       console.log("OTP:", data.otp, "Trust device:", data.trustDevice);
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      router.push("/booking/auth/create-new-password");
+      router.push("/create-new-password");
     } catch (error) {
       console.error("OTP verification error:", error);
     } finally {

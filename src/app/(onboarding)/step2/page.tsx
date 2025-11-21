@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 export default function OnboardingStep2() {
   const router = useRouter();
   const [selected, setSelected] = useState<string[]>([]);
+  const hasSelections = selected.length > 0;
 
   const experiences = [
     "Water Adventures",
@@ -34,6 +35,7 @@ export default function OnboardingStep2() {
   };
 
   const handleContinue = () => {
+    if (!hasSelections) return;
     router.push("/step3");
   };
 
@@ -82,7 +84,7 @@ export default function OnboardingStep2() {
               transition={{ duration: 0.5, ease: "easeInOut" }}
             ></motion.div>
 
-            <div className="flex justify-between mt-4 text-sm text-gray-400">
+            <div className="flex justify-between mt-4 text-sm text-gray-400 px-4">
               <span>Basic Info</span>
               <span className="text-[#F7C31F]">Travel Interest</span>
               <span>Travel Info</span>
@@ -107,7 +109,7 @@ export default function OnboardingStep2() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="max-w-3xl mx-auto grid grid-cols-3 gap-4"
+            className="max-w-4xl mx-auto flex flex-wrap gap-x-4 gap-y-5"
           >
             {experiences.map((item, index) => (
               <motion.button
@@ -115,17 +117,14 @@ export default function OnboardingStep2() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.03 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => toggle(item)}
-                className={`
-                  w-full px-4 py-3 rounded-[100px] border text-sm transition-all
-                  ${
-                    selected.includes(item)
-                      ? "border-[#F7C31F] bg-[#F7C31F]/10 text-[#F7C31F]"
-                      : "border-gray-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-300"
-                  }
-                `}
+                className={`px-6 py-3 rounded-full border text-sm font-medium tracking-wide transition-all duration-200 ${
+                  selected.includes(item)
+                    ? "bg-[#F7C31F] border-[#F7C31F] text-[#0B1309] "
+                    : "bg-[#0e1410] border-[#2A2F25] text-[#FDF3E2]/80 hover:border-[#F7C31F] hover:text-[#F7C31F]"
+                }`}
               >
                 {item}
               </motion.button>
@@ -136,13 +135,13 @@ export default function OnboardingStep2() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="flex justify-between max-w-3xl mx-auto mt-12"
+            className="flex flex-col md:flex-row justify-between max-w-4xl gap-[52px] w-full mx-auto mt-12"
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handlePrevious}
-              className="px-8 py-3 border border-gray-600 rounded-[100px] text-gray-300 hover:border-cyan-300 transition-colors"
+              className="px-8 py-3 border border-gray-600 rounded-[12px] text-gray-300 hover:border-cyan-300 transition-colors w-full"
             >
               Previous
             </motion.button>
@@ -151,7 +150,12 @@ export default function OnboardingStep2() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleContinue}
-              className="px-8 py-3 bg-[#0D3B45] hover:bg-cyan-600 text-black font-semibold rounded-[100px] transition-all"
+              disabled={!hasSelections}
+              className={`px-8 w-full py-3 font-semibold rounded-[12px] transition-all ${
+                hasSelections
+                  ? "bg-[#00AEEF] text-[#041411] hover:bg-[#05c0ff]"
+                  : "bg-[#0D3B45] text-[#041411] opacity-70 cursor-not-allowed"
+              }`}
             >
               Continue
             </motion.button>
@@ -186,7 +190,7 @@ export default function OnboardingStep2() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
           ></motion.div>
 
-          <div className="flex justify-between mt-4 text-[10px] text-gray-400">
+          <div className="flex justify-between mt-4 text-[10px] text-gray-400 px-1">
             <span>Basic Info</span>
             <span className="text-[#F7C31F]">Travel Interest</span>
             <span>Travel Info</span>
@@ -213,14 +217,11 @@ export default function OnboardingStep2() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => toggle(item)}
-                className={`
-                  w-full px-3 py-2 rounded border text-xs transition-all
-                  ${
-                    selected.includes(item)
-                      ? "border-[#F7C31F] bg-[#F7C31F]/10 text-[#F7C31F]"
-                      : "border-gray-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-300"
-                  }
-                `}
+                className={`px-3 py-2 rounded-full border text-xs font-medium transition-all ${
+                  selected.includes(item)
+                    ? "bg-[#F7C31F] border-[#F7C31F] text-[#0B1309] shadow-[0_6px_18px_rgba(247,195,31,0.25)]"
+                    : "bg-[#0e1410] border-[#2A2F25] text-gray-300 hover:border-[#F7C31F] hover:text-[#F7C31F]"
+                }`}
               >
                 {item}
               </motion.button>
@@ -231,7 +232,12 @@ export default function OnboardingStep2() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={handleContinue}
-            className="w-full mt-6 bg-cyan-500 hover:bg-cyan-600 text-black font-semibold py-2 rounded text-sm transition-colors"
+            disabled={!hasSelections}
+            className={`w-full mt-6 font-semibold py-2 rounded text-sm transition-colors ${
+              hasSelections
+                ? "bg-[#00AEEF] text-[#041411] hover:bg-[#05c0ff]"
+                : "bg-[#0D3B45] text-[#041411] opacity-70 cursor-not-allowed"
+            }`}
           >
             Continue
           </motion.button>

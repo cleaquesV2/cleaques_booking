@@ -54,7 +54,7 @@ export default function FAQSection() {
     <section className="relative text-white py-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
       <div>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-6 mb-12">
-          <div className="flex md:hidden w-full h-[0.5px] bg-[#FDF3E2] mb-6"></div>
+          <div className="flex md:hidden w-full h-[0.5px] bg-gray-500 mb-6"></div>
           <div>
             <h2 className="text-center md:text-left text-4xl md:text-5xl font-bold text-[#f7c31f] mb-2">
               Frequently Asked Questions
@@ -64,7 +64,7 @@ export default function FAQSection() {
             </p>
           </div>
           <div className="hidden md:flex items-center justify-end flex-1">
-            <div className="w-full h-[2px] bg-[#FDF3E2] max-w-[700px]"></div>
+            <div className="w-full h-[2px] bg-gray-500"></div>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">

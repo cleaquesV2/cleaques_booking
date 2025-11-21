@@ -18,8 +18,7 @@ export default function OnboardingPage() {
 
   const countries = Country.getAllCountries();
   const visitedOptions = ["Yes", "No"];
-
-
+  const isStepComplete = Boolean(country && visited);
   const filteredCountries = countries.filter((c) =>
     c.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -38,6 +37,7 @@ export default function OnboardingPage() {
   }, []);
 
   const handleContinue = () => {
+    if (!isStepComplete) return;
     router.push("/step2");
   };
 
@@ -56,7 +56,7 @@ export default function OnboardingPage() {
       <div className="absolute inset-0 pointer-events-none border-[0.1px] border-[#6b550e] rounded-[30px] mx-[20px] my-[20px] sm:mx-[25px] sm:my-[26px] lg:mx-[30px] lg:my-[31px]"></div>
 
       <div className="hidden lg:block">
-        <div className="py-[80px] px-[74px] flex items-center justify-between">
+        <div className="pt-[80px] pb-[65px] px-[74px] flex items-center justify-between">
           <Image
             src="/assets/svgs/CleaquesLogo.svg"
             alt="CLEAQUES logo"
@@ -74,8 +74,8 @@ export default function OnboardingPage() {
           </button>
         </div>
 
-        <div className="mx-8 md:mt-8 p-12">
-          <div className="relative w-full max-w-3xl mx-auto mb-12">
+        <div className="mx-8 md:mt-8 px-12">
+          <div className="relative w-full relative top-0 mx-auto mb-24">
             <div className="w-full h-1 bg-gray-700 rounded"></div>
             <motion.div
               className="absolute top-0 h-1 bg-[#F7C31F] rounded"
@@ -97,7 +97,7 @@ export default function OnboardingPage() {
             transition={{ delay: 0.2 }}
             className="text-center mb-12"
           >
-            <h1 className="text-[32px] font-[400] text-[#F7C31F] mb-2">
+            <h1 className="text-[32px] font-[600] text-[#F7C31F] mb-2">
               Let&apos;s personalize your travel experience
             </h1>
             <p className="text-[#FDF3E2] text-[16px]">
@@ -117,7 +117,7 @@ export default function OnboardingPage() {
               </label>
               <button
                 onClick={() => setShowCountryDropdown(!showCountryDropdown)}
-                className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-[12px] text-left text-gray-300 flex items-center justify-between hover:border-cyan-400 transition-colors"
+                className="w-full px-4 py-3 bg-transparent border border-[#fdf3e2] rounded-[12px] text-left text-gray-300 flex items-center justify-between hover:border-[#fdf3e2] transition-colors"
               >
                 <span>{country || "Select country"}</span>
                 <ChevronDown size={20} className="text-gray-400" />
@@ -130,14 +130,14 @@ export default function OnboardingPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 right-0 mt-2 bg-[#0f1419] border border-gray-600 rounded shadow-lg z-10 max-h-[300px] overflow-hidden flex flex-col"
+                    className="absolute top-full left-0 right-0 mt-2 bg-[#0B1309] border border-gray-600 rounded shadow-lg z-10 max-h-[300px] overflow-hidden flex flex-col"
                   >
                     <input
                       type="text"
                       placeholder="Search country..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="px-4 py-2 bg-[#1a1f24] border-b border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400"
+                      className="px-4 py-2 bg-[#0B1309] border-b border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400"
                       onClick={(e) => e.stopPropagation()}
                     />
                     <div className="overflow-y-auto max-h-[250px]">
@@ -179,7 +179,7 @@ export default function OnboardingPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 right-0 mt-2 bg-[#0f1419] border border-gray-600 rounded shadow-lg z-10"
+                    className="absolute top-full left-0 right-0 mt-2 bg-[#0B1309] border border-gray-600 rounded shadow-lg z-10"
                   >
                     {visitedOptions.map((option) => (
                       <button
@@ -202,7 +202,12 @@ export default function OnboardingPage() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleContinue}
-              className="w-full mt-12 bg-[#0D3B45] hover:bg-cyan-600 text-[#0a0e14] font-semibold py-3 rounded transition-colors"
+              disabled={!isStepComplete}
+              className={`w-full mt-12 text-[#0a0e14] font-semibold py-3 rounded transition-colors ${
+                isStepComplete
+                  ? "bg-[#00AEEF] hover:bg-[#05c0ff]"
+                  : "bg-[#0D3B45] opacity-70 cursor-not-allowed"
+              }`}
             >
               Continue
             </motion.button>
@@ -228,7 +233,7 @@ export default function OnboardingPage() {
           </button>
         </div>
 
-        <div className="relative w-full max-w-md mx-auto mb-8 mt-2 px-5">
+        <div className="relative w-full  mx-auto mb-8 mt-2 px-5">
           <div className="w-full h-1 bg-gray-700 rounded"></div>
           <motion.div
             className="absolute top-0 h-1 bg-[#F7C31F] rounded"
@@ -350,7 +355,12 @@ export default function OnboardingPage() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={handleContinue}
-            className="w-full mt-6 bg-cyan-500 hover:bg-cyan-600 text-[#0a0e14] font-semibold py-2 rounded transition-colors text-sm"
+            disabled={!isStepComplete}
+            className={`w-full mt-6 text-[#0a0e14] font-semibold py-2 rounded transition-colors text-sm ${
+              isStepComplete
+                ? "bg-[#00AEEF] hover:bg-[#05c0ff]"
+                : "bg-[#0D3B45] opacity-70 cursor-not-allowed"
+            }`}
           >
             Continue
           </motion.button>

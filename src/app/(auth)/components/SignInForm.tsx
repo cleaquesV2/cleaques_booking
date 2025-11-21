@@ -91,7 +91,7 @@ export default function SignInForm({
         />
         <a
           href="/forgot-password"
-          className="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors  "
+          className="text-blue-400 hover:text-blue-300 text-sm font-semibold transition-colors whitespace-nowrap"
         >
           Forgot password?
         </a>

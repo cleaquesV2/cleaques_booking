@@ -5,9 +5,9 @@ const CleaquesPath = () => {
   return (
     <div className=" px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-10 text-[#fdf3e2]">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-6">
-        <div className="flex md:hidden w-full h-[2px] bg-[#FDF3E2] mb-6"></div>
+        <div className="flex md:hidden w-full h-[0.5px] bg-gray-500 mb-6"></div>
         <div className="flex-1 hidden md:flex items-center justify-between">
-          <div className="w-full h-[1px] bg-[#FDF3E2]"></div>
+          <div className="w-full h-[0.5px] bg-gray-500"></div>
         </div>
 
         <div className="md:text-right text-center mx-auto md:mx-0">

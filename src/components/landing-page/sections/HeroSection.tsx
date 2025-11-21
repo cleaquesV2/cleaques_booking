@@ -58,7 +58,7 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="flex flex-col">
                 <button
                   onClick={primaryAction.onClick}
-                  className="bg-[#00AEEF] hover:bg-[#0099D6] active:bg-[#0088C0] text-white py-2 px-6 md:py-[10px] md:px-6 rounded-full text-sm md:text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#00AEEF]/50 focus:ring-offset-2 focus:ring-offset-transparent "
+                  className="bg-[#00AEEF] hover:bg-[#0099D6] active:bg-[#0088C0] text-white py-[6px] px-[24px] md:py-[10px] md:px-6 rounded-full text-sm md:text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#00AEEF]/50 focus:ring-offset-2 focus:ring-offset-transparent "
                   aria-label={primaryAction.label}
                 >
                   {primaryAction.label}
