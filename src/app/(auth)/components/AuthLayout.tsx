@@ -110,23 +110,27 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
         ))}
       </div>
 
-      {/* Right Form Section */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center px-[10px] py-[10px] sm:px-[25px] sm:py-[25px] bg-[#0B1309]">
-        <div className="w-full max-w-xl">
-          {/* Mobile logo */}
-          <div className="md:hidden mb-10 ml-4 mt-3">
-            <Image
-              src="/assets/svgs/Cleaques.svg"
-              alt="CLEAQUES logo"
-              width={210}
-              height={32}
-              className="h-auto w-auto"
-              priority
-            />
-          </div>
-          {children}
-        </div>
-      </div>
+    {/* Right Form Section */}
+<div className="w-full lg:w-1/2 relative h-screen bg-[#0B1309] px-[10px] py-[10px] sm:px-[25px] sm:py-[25px] flex items-center justify-center">
+
+  {/* Mobile navbar-like logo */}
+  <div className="md:hidden absolute top-6 left-4 z-20">
+    <Image
+      src="/assets/svgs/Cleaques.svg"
+      alt="CLEAQUES logo"
+      width={180}
+      height={30}
+      className="h-auto w-auto"
+      priority
+    />
+  </div>
+
+  {/* Form container */}
+  <div className="w-full max-w-xl mt-12">
+    {children}
+  </div>
+</div>
+
     </div>
   );
 }
