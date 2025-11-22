@@ -25,13 +25,13 @@ const About = () => {
           </p>
         </div>
 
-        <div className="relative md:flex-1">
+        <div className="relative md:flex-1 max-w-[550px] 4xl:max-w-[700px]">
           <Image
             src="/assets/png/DiasporaTravels.png"
             alt=""
             width={442}
             height={443}
-            className="w-full h-auto max-w-[450px] mx-auto rounded-[30px]"
+            className="w-full h-auto  mx-auto rounded-[30px]"
             loading="lazy"
           />
         </div>

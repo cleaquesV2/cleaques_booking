@@ -105,7 +105,11 @@ export default function RecoverPasswordOTPForm({
               onChange={(e) => handleOtpChange(index, e.target.value)}
               onKeyDown={(e) => handleKeyDown(index, e)}
               onPaste={handlePaste}
-              className="w-[76px] h-[76px] text-center text-xl font-bold bg-[#232a22] rounded-[10px] text-white focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 focus:outline-none transition-all"
+              className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-center text-md lg:text-xl font-bold 
+bg-[#232a22] rounded-[10px] text-white 
+focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 
+focus:outline-none transition-all"
+
               required
             />
           ))}
